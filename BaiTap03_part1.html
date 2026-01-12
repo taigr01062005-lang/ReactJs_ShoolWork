@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <button id="btn">Cal</button>
+    <script>
+
+        let avg = (a, b, c) => {
+            return (a + b + c) / 3;
+        }
+
+        btn.onclick = () => {
+            let dolphin = avg(88, 91, 89);
+            let koala = avg(88, 91, 110);
+            if (dolphin == koala && dolphin > 100 && koala > 100) {
+                console.log("draw")
+            }
+            else if (dolphin > koala && dolphin>100) {
+                console.log("The winner is Dolphin")
+            } else if (dolphin < koala && koala>100) {
+                console.log("The winner is Koala")
+            }else{
+                console.log("Nobody win the trophy")
+            }
+
+        }
+
+
+
+    </script>
+
 </body>
+
 </html>
