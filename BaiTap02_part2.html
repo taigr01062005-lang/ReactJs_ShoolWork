@@ -1,11 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <input type="text" placeholder="mass" id="mass1">
+    <input type="text" placeholder="height" id="height1">
+    <input type="text" placeholder="mass" id="mass2">
+    <input type="text" placeholder="height" id="height2">
+    <button id="btn">Cal</button>
+
+
+
+    <script>
+        let button = document.getElementById('btn');
+        button.onclick = () => {
+            let mass1 = document.getElementById('mass1').value;
+            let mass2 = document.getElementById('mass2').value;
+            let height1 = document.getElementById('height1').value;
+            let height2 = document.getElementById('height2').value;
+
+            function calBMI(mass, height) {
+                return mass / height ** 2;
+            }
+            let BMI1 = calBMI(mass1, height1);
+            let BMI2 = calBMI(mass2, height2);
+            let markHigherBMI = 0;
+            if (BMI1 > BMI2) {
+                markHigherBMI = true;
+
+            } else {
+                markHigherBMI = false;
+            }
+
+            if (markHigherBMI) {
+                console.log("Mark's BMI ("+BMI1+") is higher than John's BMI ("+BMI2+")")
+            }else{
+                 console.log("John's BMI ("+BMI2+") is higher than Mark's BMI ("+BMI1+")")
+            }
+
+        }
+    </script>
+
 </body>
+
 </html>
