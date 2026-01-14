@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="mass" id="mass1">
+    <input type="text" placeholder="height" id="height1">
+    <input type="text" placeholder="mass" id="mass2">
+    <input type="text" placeholder="height" id="height2">
+    <button id="btn">Cal</button>
+    <script>
+        let button = document.getElementById('btn')
+        button.onclick = () => {
+            let mass1 =  Number(document.getElementById('mass1').value);
+            let mass2 =  Number(document.getElementById('mass2').value);
+            let height1 = Number(document.getElementById('height1').value);
+            let height2 = Number(document.getElementById('height2').value);
+
+            function calBMI(mass, height) {
+                return mass / height ** 2;
+            }
+            let man1 = {
+                fullName: 'Mark Miller',
+                mass: mass1,
+                height: height1,
+                calcBMI: function () {
+                    return calBMI(this.mass, this.height)
+                }
+            }
+            let man2 = {
+                fullName: 'John Smith',
+                mass: mass2,
+                height: height2,
+                calcBMI: function () {
+                    return calBMI(this.mass, this.height)
+                }
+            }
+            function compareBMI(o1, o2) {
+                let o_greater = {}
+                let o_lower = {}
+                if (o1.calcBMI() > o2.calcBMI()) {
+                    o_greater = o1
+                    o_lower = o2
+                } else {
+                    o_greater = o2
+                    o_lower = o1
+                }
+                console.log(o_greater.fullName + "'s BMI " + o_greater.calcBMI() + " is higher than " + o_lower.fullName + "'s " + o_lower.calcBMI() + "!")
+            }
+            compareBMI(man1, man2)
+
+        }
+
+    </script>
+
+</body>
+
+</html>
