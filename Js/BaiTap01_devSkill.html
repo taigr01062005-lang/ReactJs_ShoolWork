@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Cal</button>
+    <script>
+        let button=document.getElementById('btn')
+        button.onclick=()=>{
+            let temps=[17,21,23]
+            
+            let printForeCast=(temps)=>{
+                for (let i=0;i<temps.length;i++){
+                    console.log(temps[i]+' C in '+Number(i+1)+' days... ')
+                }
+            }
+            printForeCast(temps)
+
+        }
+
+    </script>
+    
+</body>
+</html>
