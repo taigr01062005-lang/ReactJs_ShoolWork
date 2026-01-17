@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="btn">Answer poll</button>
+
+    <script>
+
+        const poll = {
+            question: "What is your favourite programming language?",
+            options: ["0: JavaScript", "1: Python", "2: Rust", "3: C++"],
+            answers: new Array(4).fill(0),
+            registerNewAnswer() {
+                let input = Number(prompt(`${this.question}\n${this.options.join('\n')}\n(Write option number)`))
+                if(typeof input==="number" && input<this.options.length && input>=0){
+                    this.answers[input]++;
+                    this.displayResults()
+                }else{
+                    alert('Số nhập vào không hợp lệ')
+                }
+            },
+            displayResults(){
+                console.log(this.answers)
+            }
+        };
+        let button=document.getElementById('btn')
+        button.onclick=()=>{
+            poll.registerNewAnswer()
+        }
+
+       
+
+    </script>
+
+</body>
+
+</html>
