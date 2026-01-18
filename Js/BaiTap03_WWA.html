@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let Data_1 = [5, 2, 4, 1, 15, 8, 3]
+        let calcAverageHumanAge = (ages) => {
+            return ages
+                .map((age) => { return humanAge = age <= 2 ? age * 2 : 16 + age * 4 })
+                .filter((age) => { return age >= 18 })
+                .reduce((acc, age, i, arr) => { return acc + age / arr.length }, 0)
+        }
+
+        console.log(calcAverageHumanAge(Data_1))
+
+        //         const calcAverageHumanAge = ages => 
+        // ages
+        //     .map(age => (age <= 2 ? 2 * age : 16 + age * 4)) // 1. Đổi tuổi
+        //     .filter(age => age >= 18)                        // 2. Lọc chó trưởng thành (>= 18)
+        //     .reduce((acc, age, i, arr) => acc + age / arr.length, 0); // 3. Tính trung bình
+
+        // // --- CHẠY THỬ ---
+        // const avg1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+        // console.log(avg1);
+
+    </script>
+
+</body>
+
+</html>
