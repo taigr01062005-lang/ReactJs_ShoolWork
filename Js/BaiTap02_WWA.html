@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let Data_1 =[5, 2, 4, 1, 15, 8, 3]
+
+        let avg=(arr)=>{
+            let sum=0
+            arr.forEach(element => {
+                sum+=element
+            });
+            return sum/arr.length
+        }
+
+        let calcAverageHumanAge = (ages) => {
+            let convertedAges=ages.map((age) => {
+                return convertedAge = age <= 2 ? age * 2 : 16 + age * 4
+            })
+           console.log(convertedAges)
+            let arr=convertedAges.filter((ele)=>{
+                return ele > 18
+            }) 
+            console.log(arr)
+            console.log(`Average Human age of all adult dogs: ${avg(arr)}`)
+
+
+        }
+        calcAverageHumanAge(Data_1)
+
+    </script>
+
+
+</body>
+
+</html>
