@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const dogs = [
+        { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
+        { weight: 8, curFood: 200, owners: ['Matilda'] },
+        { weight: 13, curFood: 275, owners: ['Sarah', 'John'] },
+        { weight: 32, curFood: 340, owners: ['Michael'] },
+        ];
+
+        dogs.forEach((dog)=>{
+            dog.recommendFood=dog.weight ** 0.75 * 28 
+        })
+        console.log(dogs)
+
+        dogs.forEach((dog)=>{
+           if(dog.owners.includes('Sarah')){
+            console.log(dog)
+           }
+        })
+
+        let ownersEatTooMuch=[]
+        let ownersEatTooLittle=[]
+         dogs.forEach((dog)=>{
+           if(dog.curFood < dog.recommendFood){
+                ownersEatTooLittle.push(...dog.owners)
+           }else if(dog.curFood > dog.recommendFood){
+                ownersEatTooMuch.push(...dog.owners)
+           }
+        })
+        console.log(ownersEatTooMuch)
+        console.log(ownersEatTooLittle)
+
+        console.log(`${ownersEatTooMuch.join(' and ')}'s dogs eat too much`)
+        console.log(`${ownersEatTooLittle.join(' and ')}'s dogs eat too little`)
+
+        dogs.forEach((dog)=>{
+            if(dog.curFood==dog.recommendFood){
+                console.log(true)
+            }else{
+                console.log(false)
+            }
+        })
+
+        let dogsOkayAmount=[]
+        dogs.forEach((dog)=>{
+            if(dog.curFood > (dog.recommendFood * 0.90) && dog.curFood < (dog.recommendFood *1.10)){
+                dogsOkayAmount.push(dog)
+                console.log(true)
+                // console.log(dog)
+            }else{
+                console.log(false)
+            }
+        })
+        console.log(dogsOkayAmount)
+
+        let dogsCopy=[...dogs]
+        dogsCopy.sort((o1,o2)=>{return o1.recommendFood - o2.recommendFood})
+        console.log(dogsCopy)
+
+    </script>
+    
+</body>
+</html>
