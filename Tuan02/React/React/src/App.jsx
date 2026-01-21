@@ -3,12 +3,17 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { ProductCard } from '../components/ProductCard'
+import { Button } from '../components/Button'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <ProductCard></ProductCard>
+    <div>
+      <Button type="primary"></Button>
+      <Button type="danger"></Button>
+      <Button type="success"></Button>
+    </div>
   )
 }
 
