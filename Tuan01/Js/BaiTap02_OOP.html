@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class CarCl{
+            constructor(make,speed){
+                this.make=make;
+                this.speed=speed;
+            }
+            accelerate(){
+                this.speed+=10
+            }
+            brake(){
+                this.speed-=5
+            }
+            get speedUS(){
+                return this.speed/1.6
+            }
+            set speedUS(a){
+                this.speed=a*1.6
+            }
+        }
+
+        let car1=new CarCl('BMW',50)
+        car1.accelerate()
+        car1.accelerate()
+        console.log(car1.speedUS)
+        console.log(car1.speedUS=25)
+        // console.log(car1.speedUS)
+    </script>
+    
+</body>
+</html>
