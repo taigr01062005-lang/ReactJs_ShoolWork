@@ -10,9 +10,7 @@ function App() {
 
   return (
     <div>
-      <Button type="primary"></Button>
-      <Button type="danger"></Button>
-      <Button type="success"></Button>
+      <ProductCard></ProductCard>
     </div>
   )
 }
