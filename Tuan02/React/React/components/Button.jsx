@@ -1,9 +1,15 @@
 import React from 'react'
 import './Button.css'
+import { useState } from 'react';
+import Alert from './Alert';
 
-export const Button = ({type}) => {
+export const Button = ({text,type,onClick}) => {
+  console.log(onclick)
   let className=`btn btn-${type}`;
   return (
-    <button className={className}>Add to Card</button>
+    
+      <button className={className} onClick={onClick}>{text}</button>
+    
+    
   )
 }

@@ -1,4 +1,4 @@
- /* .btn {
+ .btn {
   padding: 10px 20px;
   border-radius: 5px;
   border: none;
@@ -26,4 +26,7 @@
 }
 .btn-success:hover {
   background-color: #1e7e34; 
-} */
+}
+.btn-warning{
+  background-color: #FFC107 ;
+}

@@ -4,13 +4,19 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { ProductCard } from '../components/ProductCard'
 import { Button } from '../components/Button'
+import Alert from '../components/Alert'
 
 function App() {
-  const [count, setCount] = useState(0)
+  let [alertStatus,setAlertStatus]=useState(null)
+  console.log(alertStatus)
 
   return (
-    <div>
-      <ProductCard></ProductCard>
+    <div className='App'>
+      <Button type="success" text="Success" onClick={()=>{setAlertStatus('success')}} ></Button>
+      <Button type="warning" text="Warning" onClick={()=>{setAlertStatus('warning')}}></Button>
+      <Button type="danger" text="Error" onClick={()=>{setAlertStatus('error')}}> </Button>
+      <Alert type={alertStatus}></Alert>
+
     </div>
   )
 }
