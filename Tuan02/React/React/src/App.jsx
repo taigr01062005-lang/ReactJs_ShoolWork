@@ -7,16 +7,14 @@ import { Button } from '../components/Button'
 import Alert from '../components/Alert'
 import Input from '../components/Input'
 import LoginForm from '../components/LoginForm'
+import ProductList from '../components/ProductList'
 
 function App() {
   let [alertStatus,setAlertStatus]=useState(null)
-
-  console.log(alertStatus)
-
   return (
     <div className='App'>
-      <LoginForm background='antiquewhite' border='red'></LoginForm>
-
+      <ProductList></ProductList>
+     
     </div>
   )
 }
