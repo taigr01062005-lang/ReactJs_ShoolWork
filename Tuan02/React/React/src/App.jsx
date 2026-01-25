@@ -5,17 +5,17 @@ import './App.css'
 import { ProductCard } from '../components/ProductCard'
 import { Button } from '../components/Button'
 import Alert from '../components/Alert'
+import Input from '../components/Input'
+import LoginForm from '../components/LoginForm'
 
 function App() {
   let [alertStatus,setAlertStatus]=useState(null)
+
   console.log(alertStatus)
 
   return (
     <div className='App'>
-      <Button type="success" text="Success" onClick={()=>{setAlertStatus('success')}} ></Button>
-      <Button type="warning" text="Warning" onClick={()=>{setAlertStatus('warning')}}></Button>
-      <Button type="danger" text="Error" onClick={()=>{setAlertStatus('error')}}> </Button>
-      <Alert type={alertStatus}></Alert>
+      <LoginForm background='antiquewhite' border='red'></LoginForm>
 
     </div>
   )
