@@ -8,12 +8,17 @@ import Alert from '../components/Alert'
 import Input from '../components/Input'
 import LoginForm from '../components/LoginForm'
 import ProductList from '../components/ProductList'
+import { Header } from '../components/Header'
+import { StudentInfo } from '../components/StudentInfo'
+import { Footer } from '../components/Footer'
 
 function App() {
   let [alertStatus,setAlertStatus]=useState(null)
   return (
     <div className='App'>
-      <ProductList></ProductList>
+     <Header></Header>
+     <StudentInfo hoTen='Phan Hoài Bảo' mssv='23638721' lop='DHKHMT19ATT' ></StudentInfo>
+     <Footer></Footer>
      
     </div>
   )
