@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axios CRUD Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <button id="them">Thêm</button>
+    <button id="xoa">Xóa</button>
+    <button id="sua">Sửa</button>
+
+    <script>
+        const API_URL = 'https://69831cd79c3efeb892a4738c.mockapi.io/wwa/test';
+
+      
+        axios.get(`${API_URL}`)
+            .then(response => console.log('Dữ liệu lấy về:', response.data))
+            .catch(error => console.error('Lỗi GET:', error));
+
+        let btnThem = document.getElementById('them');
+        let btnXoa = document.getElementById('xoa');
+        let btnSua = document.getElementById('sua');
+
+        btnThem.onclick = () => {
+            axios.post(API_URL, {
+                name: 'Bao',
+                age: 20,
+                country: 'Viet Nam'
+            })
+            .then(response => console.log('Đã thêm:', response.data))
+            .catch(error => console.error('Lỗi POST:', error));
+        };
+
+      
+        btnXoa.onclick = () => {
+            axios.delete(`${API_URL}/49`)
+            .then(response => console.log('Đã xóa thành công:', response.data))
+            .catch(error => console.error('Lỗi DELETE:', error));
+        };
+
+        btnSua.onclick = () => {
+            axios.put(`${API_URL}/1`, {
+                name: 'Phan Hoai Bao',
+                age: 20,
+                country: 'Viet Nam'
+            })
+            .then(response => console.log('Đã sửa:', response.data))
+            .catch(error => console.error('Lỗi PUT:', error));
+        };
+    </script>
+</body>
+</html>
