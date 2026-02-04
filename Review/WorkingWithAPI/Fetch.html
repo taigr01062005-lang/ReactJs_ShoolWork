@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="them">Thêm</button>
+    <button id="xoa">Xóa</button>
+    <button id="sua">Sửa</button>
+
+    <script>
+         fetch('https://69831cd79c3efeb892a4738c.mockapi.io/wwa/test/1')
+        .then(response => response.json())
+        .then(json => console.log(json))
+
+        let btnThem=document.getElementById('them')
+        let btnXoa=document.getElementById('xoa')
+        let btnSua=document.getElementById('sua')
+
+
+        btnThem.onclick=()=>{
+            fetch('https://69831cd79c3efeb892a4738c.mockapi.io/wwa/test', {
+            method: 'POST',
+            body: JSON.stringify({
+                name:'Bao',
+                age:20,
+                country: 'Viet Nam'
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => response.json())
+            .then((json) => console.log(json));
+        }
+        btnXoa.onclick=()=>{
+              fetch('https://69831cd79c3efeb892a4738c.mockapi.io/wwa/test/50', {
+                method: 'DELETE',
+                }) 
+                .then((response) => response.json())
+                .then((json) => console.log(json));;
+
+        }
+        btnSua.onclick=()=>{
+             fetch('https://69831cd79c3efeb892a4738c.mockapi.io/wwa/test/1', {
+            method: 'PUT',
+            body: JSON.stringify({
+                name:'Phan Hoai Bao',
+                age:20,
+                country: 'Viet Nam'
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => response.json())
+            .then((json) => console.log(json));
+
+        }
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
