@@ -1,27 +1,24 @@
-import { useState } from 'react'
+import { useState, useEffect, useReducer, useMemo, useCallback } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { Button } from '../components/Button'
-import { useEffect } from 'react'
-import { useReducer } from 'react'
-import { useMemo } from 'react'
+
 
 
 function App() {
   const [count, setCount] = useState(0);
-  const [numbers] = useState([10, 20, 30, 40, 50]);
 
-  const total = useMemo(() => {
-    console.log("Đang tính tổng");
-    return numbers.reduce((acc, cur) => acc + cur, 0);
-  }, [numbers]); // Chỉ tính lại nếu 'numbers' thay đổi
+  // useCallback trả về chính cái HÀM đó
+  const increment = useCallback(() => {
+    setCount((prev) => prev + 1);
+  }, []); // Hàm này sẽ được giữ nguyên địa chỉ vùng nhớ suốt đời
 
 
   return (
     <div>
-      <span>{total}</span>
-      <Button type='primary' text='+' onClick={() => { setCount(count + 1) }}></Button>
+      <span>{count}</span>
+      <Button type='primary' text='+' onClick={increment}></Button>
 
     </div>
 
