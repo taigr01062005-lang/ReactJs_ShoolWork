@@ -1,0 +1,23 @@
+.badge {
+  padding:5px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 10px;
+  text-align: center;
+  vertical-align: middle;
+  margin: 5px;
+}
+
+.badge-online {
+  background-color: #28a745; 
+}
+
+.badge-offline {
+  background-color: gainsboro; 
+  color: #212529;
+}
+
+.badge-busy {
+  background-color: #dc3545; 
+}

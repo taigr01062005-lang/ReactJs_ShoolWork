@@ -11,13 +11,20 @@ import ProductList from '../components/ProductList'
 import { Header } from '../components/Header'
 import { StudentInfo } from '../components/StudentInfo'
 import { Footer } from '../components/Footer'
+import StatusBadge from '../components/StatusBadge'
 
 function App() {
-  let [count,setCount]=useState(0)
+  let [color,setColor]=useState('')
 
   return (
     <div className='App'>
-      <LoginForm background='gainsboro'></LoginForm>
+      <div> <StatusBadge status={color}></StatusBadge></div>
+      <div>
+        <Button type='success' text='online' onClick={()=>{setColor('online')}}></Button>
+       <Button  text='offline' onClick={()=>{setColor('offline')}}></Button>
+        <Button type='danger' text='busy' onClick={()=>{setColor('busy')}}></Button>
+      </div>
+      
      
     </div>
   )
