@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axios with Async/Await</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <button id="them">Thêm</button>
+    <button id="xoa">Xóa</button>
+    <button id="sua">Sửa</button>
+
+    <script>
+        const API_URL = 'https://69831cd79c3efeb892a4738c.mockapi.io/wwa/test';
+
+        async function fetchData() {
+            try {
+                const response = await axios.get(`${API_URL}`);
+                console.log('Dữ liệu ban đầu:', response.data);
+            } catch (error) {
+                console.error('Lỗi khi lấy dữ liệu:', error.message);
+            }
+        }
+        fetchData();
+
+        const btnThem = document.getElementById('them');
+        const btnXoa = document.getElementById('xoa');
+        const btnSua = document.getElementById('sua');
+
+        btnThem.onclick = async () => {
+            try {
+                const response = await axios.post(`${API_URL}`, {
+                    name: 'Bao',
+                    age: 20,
+                    country: 'Viet Nam'
+                });
+                console.log('Đã thêm thành công:', response.data);
+            } catch (error) {
+                console.error('Lỗi khi thêm:', error.message);
+            }
+        };
+
+        btnXoa.onclick = async () => {
+            try {
+                const response = await axios.delete(`${API_URL}/50`);
+                console.log('Đã xóa:', response.data);
+            } catch (error) {
+                console.error('Lỗi khi xóa:', error.response ? "Không tìm thấy ID" : error.message);
+            }
+        };
+
+        btnSua.onclick = async () => {
+            try {
+                const response = await axios.put(`${API_URL}/1`, {
+                    name: 'Phan Hoai Bao (Updated)',
+                    age: 21,
+                    country: 'Viet Nam'
+                });
+                console.log('Cập nhật hoàn tất:', response.data);
+            } catch (error) {
+                console.error('Lỗi khi sửa:', error.message);
+            }
+        };
+    </script>
+</body>
+</html>
