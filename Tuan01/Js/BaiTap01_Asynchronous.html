@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <script>
+        let whereIam=(lat,lon)=>{
+        const API_URL = `https://geocode.xyz/${lat},${lon}?geoit=json`;
+
+        async function fetchData() {
+            try {
+                const response = await axios.get(`${API_URL}`);
+                console.log('Dữ liệu ban đầu:', response.data);
+            } catch (error) {
+                console.error('Lỗi khi lấy dữ liệu:', error.message);
+            }
+        }
+        fetchData();
+        }
+        whereIam(52.508, 13.381)
+    </script>
+    
+</body>
+</html>
