@@ -1,0 +1,12 @@
+.todo input{
+  margin: 5px;
+  border-radius: 5px;
+  width: 50%;
+  padding: 10px;
+
+}
+.todo{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: (1fr);  
+}

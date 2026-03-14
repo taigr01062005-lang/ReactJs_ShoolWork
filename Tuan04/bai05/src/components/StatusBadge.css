@@ -1,0 +1,23 @@
+.badge {
+  padding:5px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 10px;
+  text-align: center;
+  vertical-align: middle;
+  margin: 5px;
+}
+
+.badge-completed {
+  background-color: #28a745; 
+}
+
+.badge-pending {
+  background-color: gainsboro; 
+  color: #212529;
+}
+
+.badge-in_progress {
+  background-color: #dc3545; 
+}
