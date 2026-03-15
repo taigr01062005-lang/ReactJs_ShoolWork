@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { useEffect } from 'react'
+import axios from "axios"
 
 function App() {
   const [data, setData] = useState([])
@@ -24,13 +25,14 @@ function App() {
       //   })
   
       async function fetchData() {
+
         try {
-          let data=await fetch(url);
-          let res=await data.json();
-          console.log(res)
+        
+          let res=await axios.get(url);
+          console.log(res.data)
          
           setTimeout(()=>{
-            setData(res)
+            setData(res.data)
             setLoading(false)
           },3000)
         } catch (err) {

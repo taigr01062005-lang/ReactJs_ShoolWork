@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Button } from './Button';
 import axios from 'axios';
 
-const TodoForm = ({onAdd}) => {
+const TodoForm = ({onAdd,onDelete}) => {
     const [formData, setFormData] = useState({
         name: '',
         description: '',
@@ -44,7 +44,7 @@ const TodoForm = ({onAdd}) => {
         <input type="text" name="dueDate" value={formData.dueDate} placeholder='Due Date' onChange={handleChange}/>
         <input type="text" name="status" value={formData.status} placeholder='Status' onChange={handleChange}/>     
         <Button text="Thêm" type="primary" onClick={()=>{handleSubmit()}}></Button>
-        <Button text="Xóa" type="danger"></Button> 
+        <Button text="Xóa" type="danger" onClick={()=>{onDelete()}}></Button> 
         {/* <Button text="Sửa" type="warning"></Button> */}
     </div>
   )
